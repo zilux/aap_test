@@ -5,7 +5,7 @@
   become: false
   vars:
      naam: "{{ lookup('env', 'THIRD_PARTY_CLOUD_API_TOKEN') }}"
-     pipo: "{{ lookup('file', 'template' }}"
+     pipo: "{{ lookup('file', 'template') }}"
 
 
   tasks:
