@@ -17,3 +17,7 @@
     - name: Some debug extra_vars
       ansible.builtin.debug:
         msg: file_name on master is {{ uc_content_1  }} 
+
+    - name: Some debug env 
+      ansible.builtin.debug:
+        msg: env var uc_content is {{ lookup('env', uc_content_1 ) }} 
