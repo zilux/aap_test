@@ -4,7 +4,7 @@
   hosts: localhost
   become: false
   vars:
-     naam: "{{ lookup('file', 'username[1]') }}"
+     naam: "{{ lookup('env', 'THIRD_PARTY_CLOUD_API_TOKEN') }}"
 
 
   tasks:
