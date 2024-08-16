@@ -4,7 +4,7 @@
   hosts: localhost
   become: false
   vars:
-     naam: "{{ lookup('file', 'username') }}"
+     naam: "{{ lookup('ansible.builtin.vars', 'username') }}"
 
 
   tasks:
