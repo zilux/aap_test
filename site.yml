@@ -20,7 +20,7 @@
 
     - name: Some debug env 
       ansible.builtin.debug:
-        msg: env is {{ lookup('env', 'admin_password' ) }} 
+        msg: env is {{ lookup('env', 'admin_passwordx' ) }} 
 
 
 
