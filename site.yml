@@ -12,4 +12,4 @@
 
     - name: Some debug
       ansible.builtin.debug:
-        msg: file_content is {{ lookup('file', secretx ) }} 
+        msg: file_content is {{ lookup('file', secret_1 ) }} 
