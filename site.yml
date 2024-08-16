@@ -5,11 +5,11 @@
   become: false
   vars:
      naam: "{{ lookup('env', 'THIRD_PARTY_CLOUD_API_TOKEN') }}"
-     # pipo: "{{ lookup('file', 'template') }}"
+     pipo: "{{ lookup('file', 'template') }}"
 
 
   tasks:
 
     - name: Some debug
       ansible.builtin.debug:
-        msg: "{{ naam }} - {{ some_extra_var }}"  
+        msg: "{{ naam }} - {{ some_extra_var }} {{ pipo }} "  
