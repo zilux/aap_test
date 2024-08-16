@@ -12,12 +12,12 @@
 
     - name: Some debug file
       ansible.builtin.debug:
-        msg: file_content is {{ lookup('file', uc_content_1 ) }} 
+        msg: file_content is {{ lookup('file', secret_1 ) }} 
 
     - name: Some debug extra_vars
       ansible.builtin.debug:
-        msg: file_name on master is {{ uc_content_1  }} 
+        msg: file_name on master is {{ secret_1  }} 
 
     - name: Some debug env 
       ansible.builtin.debug:
-        msg: env var uc_content is {{ lookup('env', 'uc_content_1' ) }} 
+        msg: env var uc_content is {{ lookup('env', 'secret_1' ) }} 
