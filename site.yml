@@ -14,10 +14,18 @@
       ansible.builtin.debug:
         msg: file_content is {{ lookup('file', admin_password ) }} 
 
-    - name: Some debug extra_vars
-      ansible.builtin.debug:
-        msg: file_name on master is {{ admin_password  }} 
+#    - name: Some debug extra_vars
+#      ansible.builtin.debug:
+#        msg: file_name on master is {{ admin_password  }} 
 
     - name: Some debug env 
       ansible.builtin.debug:
         msg: env is {{ lookup('env', 'admin_password' ) }} 
+
+
+
+#file:
+#  template.content_1: '{{ uc_content_1 }}'
+#extra_vars:
+#  uc_content_1: '{{ tower.filename.content_1 }}'
+        
