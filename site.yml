@@ -14,9 +14,9 @@
 #      ansible.builtin.debug:
 #        msg: file_content is {{ lookup('file', secret_1 ) }} 
 
-    - name: Some debug extra_vars
-      ansible.builtin.debug:
-        msg: file_name on master is {{ admin_password  }} 
+#    - name: Some debug extra_vars
+#      ansible.builtin.debug:
+#        msg: file_name on master is {{ admin_password  }} 
 
     - name: Some debug env 
       ansible.builtin.debug:
