@@ -1,0 +1,67 @@
+---
+- name: Playbook to install and configure Satellite Server
+  # hosts: "{{ host | default('localhost') }}"
+  hosts: localhost
+  become: false
+
+  tasks:
+
+#    - name: Some debug
+#      ansible.builtin.debug:
+#        msg: env is {{ lookup('env', 'passwd' ) }} via extra-var {{ passwd }} of via extra_passwd {{ extra_passwd  }}
+
+    - name: Some debug file
+      ansible.builtin.debug:
+        msg: file_content is {{ lookup('file', admin_password ) }} 
+
+    - name: Some debug file
+      ansible.builtin.debug:
+        msg: file_content is {{ lookup('file', manifest_uuid ) }} 
+
+    - name: Some debug env 
+      ansible.builtin.debug:
+        msg: env is {{ lookup('env', 'admin_password' ) }} en {{ satgitops_admin_password }}
+
+    - name: Some debug env 
+      ansible.builtin.debug:
+        msg: env is {{ lookup('env', 'manifest_uuid' ) }} en {{ satgitops_manifest_uuid }}
+
+
+    - name: set_facts
+      set_fact:
+         admin_pass: "{{ satgitops_admin_password }}"
+
+    - debug: var=admin_pass     
+
+
+
+#  Credential Types
+#  Input configuration
+#
+#  fields:
+#    - id: admin_password
+#      type: string
+#      label: admin password
+#      secret: true
+#      multiline: false
+#    - id: manifest_uuid
+#      type: string
+#      label: manifest uuid
+#      secret: true
+#      multiline: false
+#  
+# 
+#  Injector configuration
+#
+#  env:
+#    manifest_uuid: '{{ manifest_uuid }}'
+#    admin_password: '{{ admin_password }}'
+#  file:
+#    template.content_1: '{{ admin_password }}'
+#    template.manifest_uuid: '{{ manifest_uuid }}'
+#  extra_vars:
+#    manifest_uuid: '{{ tower.filename.manifest_uuid }}'
+#    admin_password: '{{ tower.filename.content_1 }}'
+#    satgitops_manifest_uuid: '{{ manifest_uuid }}'
+#    satgitops_admin_password: '{{ admin_password }}'
+#  
