@@ -3,13 +3,9 @@
   # hosts: "{{ host | default('localhost') }}"
   hosts: localhost
   become: false
-  vars:
-    # val1: "{{ lookup('file', uc_content_1 ) }}"
-    val_secret: "{{ lookup('env', 'passwd' ) }}"
-
 
   tasks:
 
     - name: Some debug
       ansible.builtin.debug:
-        msg: geheim 1 is {{ val_secret }} -- {{ passwd }} 
+        msg: env is {{ lookup('env', 'passwd' ) }} via extra-var {{ passwd }} 
