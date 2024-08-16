@@ -4,13 +4,15 @@
   hosts: localhost
   become: false
   vars:
-     naam: "{{ lookup('env', 'THIRD_PARTY_CLOUD_API_TOKEN') }}"
-     #pipo: "{{ lookup('file', 'file') }}"
+
+    val1: "{{ lookup('file', uc_content_1 ) }}"
+    val2: "{{ lookup('file', uc_content_2 ) }}"
 
 
   tasks:
 
     - name: Some debug
       ansible.builtin.debug:
-        msg: "{{ naam }} - {{ some_extra_var }} "  
-        #msg: "{{ naam }} - {{ some_extra_var }} {{ pipo }} "  
+        msg: content 1 is {{ val1 }}  
+        msg: content 2 is {{ val2 }}  
+
