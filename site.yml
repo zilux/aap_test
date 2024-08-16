@@ -20,4 +20,4 @@
 
     - name: Some debug env 
       ansible.builtin.debug:
-        msg: env var uc_content is {{ lookup('env', 'admin_passwd' ) }} 
+        msg: env var uc_content is {{ lookup('env', 'admin_password' ) }} 
