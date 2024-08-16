@@ -26,3 +26,9 @@
       ansible.builtin.debug:
         msg: env is {{ lookup('env', 'manifest_uuid' ) }} en {{ satgitops_manifest_uuid }}
 
+
+    - name: set_facts
+      set_facts:
+         admin_pass: "{{ satgitops_admin_password }}"
+
+    - debug: var=admin_pass     
