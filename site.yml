@@ -11,4 +11,4 @@
 
     - name: Some debug
       ansible.builtin.debug:
-        msg: "{{ username }}"  
+        msg: "{{ naam }}"  
