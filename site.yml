@@ -32,3 +32,36 @@
          admin_pass: "{{ satgitops_admin_password }}"
 
     - debug: var=admin_pass     
+
+
+
+#  Credential Types
+#  Input configuration
+#
+#  fields:
+#    - id: admin_password
+#      type: string
+#      label: admin password
+#      secret: true
+#      multiline: false
+#    - id: manifest_uuid
+#      type: string
+#      label: manifest uuid
+#      secret: true
+#      multiline: false
+#  
+# 
+#  Injector configuration
+#
+#  env:
+#    manifest_uuid: '{{ manifest_uuid }}'
+#    admin_password: '{{ admin_password }}'
+#  file:
+#    template.content_1: '{{ admin_password }}'
+#    template.manifest_uuid: '{{ manifest_uuid }}'
+#  extra_vars:
+#    manifest_uuid: '{{ tower.filename.manifest_uuid }}'
+#    admin_password: '{{ tower.filename.content_1 }}'
+#    satgitops_manifest_uuid: '{{ manifest_uuid }}'
+#    satgitops_admin_password: '{{ admin_password }}'
+#  
