@@ -1,0 +1,11 @@
+---
+- name: Playbook to install and configure Satellite Server
+  # hosts: "{{ host | default('localhost') }}"
+  hosts: localhost
+  become: false
+
+  tasks:
+
+    - name: Some debug
+      ansible.builtin.debug:
+        msg: "Hello world!"
