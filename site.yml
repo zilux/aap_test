@@ -10,13 +10,13 @@
 #      ansible.builtin.debug:
 #        msg: env is {{ lookup('env', 'passwd' ) }} via extra-var {{ passwd }} of via extra_passwd {{ extra_passwd  }}
 
-#    - name: Some debug file
-#      ansible.builtin.debug:
-#        msg: file_content is {{ lookup('file', secret_1 ) }} 
+    - name: Some debug file
+      ansible.builtin.debug:
+        msg: file_content is {{ lookup('file', admin_password ) }} 
 
-#    - name: Some debug extra_vars
-#      ansible.builtin.debug:
-#        msg: file_name on master is {{ admin_password  }} 
+    - name: Some debug extra_vars
+      ansible.builtin.debug:
+        msg: file_name on master is {{ admin_password  }} 
 
     - name: Some debug env 
       ansible.builtin.debug:
