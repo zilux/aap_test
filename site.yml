@@ -28,7 +28,7 @@
 
 
     - name: set_facts
-      set_facts:
+      set_fact:
          admin_pass: "{{ satgitops_admin_password }}"
 
     - debug: var=admin_pass     
