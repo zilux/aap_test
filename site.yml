@@ -15,3 +15,6 @@
       ansible.builtin.debug:
         msg: content 1 is {{ val1 }}  content 2 is {{ val2 }}  
 
+    - name: Some debug
+      ansible.builtin.debug:
+        msg: content 1 is {{ uc_content_1 }}  content 2 is {{ uc_content_2 }}  
