@@ -6,10 +6,10 @@
 
   tasks:
 
-    - name: Some debug
-      ansible.builtin.debug:
-        msg: env is {{ lookup('env', 'passwd' ) }} via extra-var {{ passwd }} of via extra_passwd {{ extra_passwd  }}
+#    - name: Some debug
+#      ansible.builtin.debug:
+#        msg: env is {{ lookup('env', 'passwd' ) }} via extra-var {{ passwd }} of via extra_passwd {{ extra_passwd  }}
 
     - name: Some debug
       ansible.builtin.debug:
-        msg: file_content is {{ lookup('file', secret_1 ) }} 
+        msg: file_content is {{ lookup('file', uc_content_1 ) }} 
