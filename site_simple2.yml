@@ -13,6 +13,7 @@
 
     - debug: var=username     
     - debug: var=some_extra_var    
+    - debug: var=name
 
 # fields:
 #   - id: username
