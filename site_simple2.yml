@@ -5,10 +5,6 @@
   become: false
 
   tasks:
-     - name: Some debug file
-      ansible.builtin.debug:
-        msg: file_content is {{ lookup('file', admin_password ) }}
-
 
     - name: set_facts
       set_fact:
