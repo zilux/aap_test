@@ -13,7 +13,6 @@
 
     - debug: var=username     
    # - debug: var=name     
-    - debug: "{{ some_extra_var }}" 
 
 # fields:
 #   - id: username
