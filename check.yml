@@ -1,0 +1,13 @@
+
+---
+- name: Playbook to install and configure Satellite Server
+  hosts: "{{ env | default('localhost') }}"
+  #hosts: localhost
+  become: false
+  gather_facts: false
+
+  tasks:
+
+    - name: DEBUG
+      debug:
+        msg: host {{ inventory_hostname }}  {{ sat_host }} {{ param_shared }}
