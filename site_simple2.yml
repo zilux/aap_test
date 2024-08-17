@@ -9,10 +9,11 @@
     - name: set_facts
       set_fact:
          username: "{{ lookup('env' , 'THIRD_PARTY_CLOUD_API_TOKEN') }}"
-         name: "{{ lookup('file', 'username') }}" 
+     #    name: "{{ lookup('file', ) }}" 
 
     - debug: var=username     
-    - debug: var=name     
+   # - debug: var=name     
+    - debug: "{{ some_extra_var }}" 
 
 # fields:
 #   - id: username
