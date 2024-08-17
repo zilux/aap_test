@@ -1,26 +1,15 @@
-[localhost]
-localhost 
-
 [prod]
 lspe000000
 
 [pa]
 lspe000012
 
-[capsules_prod]
+[prod_capsules]
 lspe000001
 lspe000016
 lspe000017
 lspe000018
 
-[capsules_pa]
+[pa_capsules]
 lspe000019
 lspe000020
-
-[all_capsules:children]
-capsules_prod
-capsules_pa
-
-[all_satellites:children]
-prod
-pa

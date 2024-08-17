@@ -1,13 +1,38 @@
 
 ---
 - name: Playbook to install and configure Satellite Server
-  hosts: "{{ env | default('localhost') }}"
-  #hosts: localhost
+  hosts: localhost
   become: false
   gather_facts: false
 
   tasks:
 
-    - name: DEBUG
+    - name: Block include satgitops and group_vars
+      tags: always
+      block:
+
+        - name: All hosts in this group
+          set_fact:
+            run_hosts: "{{ groups[env] }}" 
+
+        - name: Be sure environment is set
+          ansible.builtin.assert:
+            that:
+              - env is defined
+            fail_msg: Droeftoeter
+            success_msg: Going to setup environment .....
+
+        # Insert localhost in group to use group_vars 
+        - name: Add localhost to group {{ env }}
+          ansible.builtin.add_host:
+            name: localhost
+            groups: "{{ env }}"
+
+    - name: DEBUG PARAMS
       debug:
-        msg: host {{ inventory_hostname }}  {{ sat_host }} {{ param_shared }}
+        msg: 
+          - "host: {{ inventory_hostname }}"
+          - "sat_host:  {{ sat_host }}"
+          - "subscription: {{ subscription }}"
+          - "param_shared: {{ param_shared }}"
+          - "hosts in group: {{ run_hosts }}" 
