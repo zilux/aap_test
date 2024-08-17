@@ -12,7 +12,7 @@
      #    name: "{{ lookup('file', ) }}" 
 
     - debug: var=username     
-   # - debug: var=name     
+    - debug: var=some_extra_var    
 
 # fields:
 #   - id: username
