@@ -1,0 +1,16 @@
+---
+- name: Playbook to install and configure Satellite Server
+  # hosts: "{{ host | default('localhost') }}"
+  hosts: localhost
+  become: false
+
+  tasks:
+
+#    - name: Some debug
+#      ansible.builtin.debug:
+#        msg: env is {{ lookup('env', 'passwd' ) }} via extra-var {{ passwd }} of via extra_passwd {{ extra_passwd  }}
+
+    - name: Some debug file
+      ansible.builtin.debug:
+        msg: file_content is {{ lookup('file', uc_content_41 ) }} 
+
