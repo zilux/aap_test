@@ -20,6 +20,9 @@ jobs:
     steps:
       - name: Check out the codebase.
         uses: actions/checkout@v2
+
+      - name: Install test dependencies.
+        run: dnf install python3-pip 
       
       - name: Install test dependencies.
         run: pip3 install yamllint
