@@ -1,6 +1,7 @@
 ---
 - name: Playbook to install and configure Satellite Server
   # hosts: "{{ host | default('localhost') }}"
+  # added runner on runner.qrom.nl
   hosts: localhost
   become: false
 
