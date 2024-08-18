@@ -25,8 +25,11 @@ jobs:
         run: sudo dnf install python3-pip -y
       
       - name: Install test dependencies.
-        run: pip3 install yamllint
+        run: pip3 install ansible-dev-tools
+
+      - name: Install test dependencies.
+        run: pip3 install ansible-lint
 
       - name: Lint code.
         run: |
-          yamllint .
+          ansible-lint site.yml
